@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'recipes.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+Recipes _$RecipesFromJson(Map<String, dynamic> json) => Recipes(
+      title: json['title'] as String,
+      description: json['description'] as String,
+      chef: json['chef'] as String,
+      image: json['image'] as String,
+      catigories: json['catigories'] as String,
+    );
+
+Map<String, dynamic> _$RecipesToJson(Recipes instance) => <String, dynamic>{
+      'title': instance.title,
+      'description': instance.description,
+      'chef': instance.chef,
+      'image': instance.image,
+      'catigories': instance.catigories,
+    };
