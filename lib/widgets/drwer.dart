@@ -39,13 +39,13 @@ class _MyNavBarState extends State<MyNavBar> {
             : ListView(
                 children: [
                   ListTile(
-                    title: Text("SignUP NOW !!!"),
+                    title: Text("Signup"),
                     onTap: () {
                       context.push("/signup");
                     },
                   ),
                   ListTile(
-                    title: Text("Sign In Dear :)"),
+                    title: Text("Signin"),
                     onTap: () {
                       context.push("/signin");
                     },

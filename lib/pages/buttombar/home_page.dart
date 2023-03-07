@@ -60,7 +60,7 @@ class _MYHomePageState extends State<MYHomePage> {
         ),
         backgroundColor: Color.fromARGB(255, 218, 183, 44),
       ),
-      body: pages[currentIndex],
+      body: HomeBody(),
     );
   }
 }

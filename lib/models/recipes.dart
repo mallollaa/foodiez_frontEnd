@@ -5,6 +5,7 @@ part 'recipes.g.dart';
 
 @JsonSerializable()
 class Recipes {
+  int? id;
   String title;
   String description;
   String chef;
@@ -16,6 +17,7 @@ class Recipes {
   Map<String, dynamic> toJson() => _$RecipesToJson(this);
 
   Recipes({
+    required this.id,
     required this.title,
     required this.description,
     required this.chef,
