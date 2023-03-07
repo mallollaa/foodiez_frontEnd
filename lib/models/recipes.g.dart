@@ -12,7 +12,7 @@ Recipes _$RecipesFromJson(Map<String, dynamic> json) => Recipes(
       description: json['description'] as String,
       chef: json['chef'] as String,
       image: json['image'] as String,
-      catigories: json['catigories'] as String,
+      catigories: Categery.fromJson(json['category'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$RecipesToJson(Recipes instance) => <String, dynamic>{
@@ -21,5 +21,5 @@ Map<String, dynamic> _$RecipesToJson(Recipes instance) => <String, dynamic>{
       'description': instance.description,
       'chef': instance.chef,
       'image': instance.image,
-      'catigories': instance.catigories,
+      'category': instance.catigories,
     };

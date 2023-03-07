@@ -5,11 +5,14 @@ import 'package:foodiez/services/client.dart';
 class RecipeServices {
   Future<List<Recipes>> getRecipes() async {
     try {
+      print("Before getting recipes");
       final response = await Client.client.get("/recipes/");
       final recipesData = response.data as List;
       final recipes = recipesData
           .map((recipeJson) => Recipes.fromJson(recipeJson))
           .toList();
+      print("after getting recipes $recipes");
+
       return recipes;
     } catch (error) {
       print('Error while getting recipes: $error');

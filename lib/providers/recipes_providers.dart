@@ -13,7 +13,7 @@ class RecipesProvider extends ChangeNotifier {
     final recipeServices = RecipeServices();
     final recipeResponse = await recipeServices.getRecipes();
     recipes = recipeResponse;
-    notifyListeners();
+    // notifyListeners();
   }
 
   Future<void> addRecipe(Recipes newRecipes) async {

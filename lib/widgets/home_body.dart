@@ -33,17 +33,35 @@ class HomeBody extends StatelessWidget {
           height: 25,
         ),
         Expanded(
-          child: ListView.builder(
-            itemCount: recipes.length,
-            itemBuilder: (context, index) {
-              final recipe = recipes[index];
-              return ListTile(
-                title: Text(recipe.title),
-                subtitle: Text(recipe.description),
+            child: FutureBuilder(
+          future:
+              Provider.of<RecipesProvider>(context, listen: false).getRecipes(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return CircularProgressIndicator();
+            } else {
+              return ListView.builder(
+                itemCount: recipes.length,
+                itemBuilder: (context, index) {
+                  final recipe = recipes[index];
+                  return Container(
+                    margin: EdgeInsets.all(10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(recipe.title),
+                        Image.network(
+                          recipe.image,
+                          width: 200,
+                        )
+                      ],
+                    ),
+                  );
+                },
               );
-            },
-          ),
-        ),
+            }
+          },
+        )),
       ],
     );
   }
