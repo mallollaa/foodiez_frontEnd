@@ -18,39 +18,49 @@ class _MyNavBarState extends State<MyNavBar> {
   // ignore: prefer_const_literals_to_create_immutables
   Widget build(BuildContext context) {
     return Drawer(
-        child: context.watch<AuthProvider>().isAuth
-            ? ListView(
-                padding: EdgeInsets.zero,
-                children: [
-                  DrawerHeader(
-                    child: Text(
-                        "Welcome ${context.watch<AuthProvider>().user.username}"),
-                    decoration: const BoxDecoration(
-                      color: Colors.blue,
-                    ),
+      child: context.watch<AuthProvider>().isAuth
+          ? ListView(padding: EdgeInsets.zero, children: [
+              UserAccountsDrawerHeader(
+                accountName: Text("Username"),
+                accountEmail: Text("email : mah41411@gmail.com"),
+                currentAccountPicture: CircleAvatar(
+                  child: ClipOval(
+                    child: Image.asset("assets/images/userpic.png"),
                   ),
-                  ListTile(
-                    title: const Text("Logout"),
-                    trailing: const Icon(Icons.logout),
-                    onTap: () {},
-                  ),
-                ],
-              )
-            : ListView(
-                children: [
-                  ListTile(
-                    title: Text("SignUP NOW !!!"),
-                    onTap: () {
-                      context.push("/signup");
-                    },
-                  ),
-                  ListTile(
-                    title: Text("Sign In Dear :)"),
-                    onTap: () {
-                      context.push("/signin");
-                    },
-                  ),
-                ],
-              ));
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.explore_outlined),
+                title: Text("explore"),
+                onTap: () {
+                  context.push('/explore');
+                  //return the setings page here
+                },
+              ),
+            ])
+          : ListView(
+              children: [
+                ListTile(
+                  leading: Icon(Icons.settings),
+                  title: Text("Regester"),
+                  onTap: () {
+                    context.push('/signup');
+
+                    //return the setings page here
+                  },
+                ),
+                ListTile(
+                  leading: Icon(Icons.logout),
+                  title: Text("Log in"),
+                  onTap: () {
+                    context.push('/signin');
+                    context.pop();
+                    //return the logout page here
+                  },
+                ),
+              ],
+            ),
+      // Divider(),
+    );
   }
 }
