@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:foodiez/pages/recipes/food_body_page.dart';
-
-import 'package:foodiez/widgets/search_bar.dart';
 import 'package:foodiez/widgets/text/text.dart';
 
-
 import 'package:foodiez/providers/recipes_providers.dart';
-import 'package:foodiez/widgets/search_bar.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -32,48 +28,48 @@ class _HomeBodyState extends State<HomeBody> {
       children: [
         // --- shwing the header ----
         Container(
-            margin: EdgeInsets.only(top: 10, bottom: 10),
-            padding: EdgeInsets.only(left: 20, right: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [
-                    MyText(
-                      text: "MW Kitchen",
-                    ),
-                    Row(
-                      children: [
-                        SmallText(
-                          text: "Kuwait",
-                          color: Colors.black54,
-                        ),
-                        Icon(Icons.arrow_drop_down_rounded)
-                      ],
-                    )
-                  ],
-                ),
-                Center(
-                  child: Container(
-                    width: 45,
-                    height: 45,
-                    child: Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Color.fromARGB(255, 223, 244, 133),
-                    ),
+          margin: EdgeInsets.only(top: 10, bottom: 10),
+          padding: EdgeInsets.only(left: 20, right: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                children: [
+                  MyText(
+                    text: "MW Kitchen",
                   ),
-                )
-              ],
-            ),
+                  Row(
+                    children: [
+                      SmallText(
+                        text: "Kuwait",
+                        color: Colors.black54,
+                      ),
+                      Icon(Icons.arrow_drop_down_rounded)
+                    ],
+                  )
+                ],
+              ),
+              Center(
+                child: Container(
+                  width: 45,
+                  height: 45,
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Color.fromARGB(255, 223, 244, 133),
+                  ),
+                ),
+              )
+            ],
           ),
         ),
+
         // --- showing the body -----
         MyfoodBodyPage(),
-   Container(
+        Container(
           padding: EdgeInsets.only(top: 25),
           child: Text(
             " Manal & Waleed Kitchen ! ",
@@ -84,7 +80,7 @@ class _HomeBodyState extends State<HomeBody> {
             textAlign: TextAlign.center,
           ),
         ),
-)
+
         SizedBox(
           height: 25,
         ),
@@ -118,7 +114,6 @@ class _HomeBodyState extends State<HomeBody> {
             }
           },
         )),
-
       ],
     );
   }
