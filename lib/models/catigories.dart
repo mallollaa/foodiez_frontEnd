@@ -3,15 +3,14 @@ import 'package:json_annotation/json_annotation.dart';
 part 'catigories.g.dart';
 
 @JsonSerializable()
-class Categery {
-  String name;
+class Category {
   int? id;
-  Categery({
+  String name;
+  factory Category.fromJson(Map<String, dynamic> json) =>
+      _$CategoryFromJson(json);
+  Map<String, dynamic> toJson() => _$CategoryToJson(this);
+  Category({
+    required this.id,
     required this.name,
-    this.id,
   });
-
-  factory Categery.fromJson(Map<String, dynamic> json) =>
-      _$CategeryFromJson(json);
-  Map<String, dynamic> toJson() => _$CategeryToJson(this);
 }

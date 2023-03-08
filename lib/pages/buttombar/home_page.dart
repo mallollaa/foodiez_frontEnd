@@ -5,6 +5,7 @@ import 'package:foodiez/pages/buttombar/account_page.dart';
 import 'package:foodiez/pages/buttombar/search_page.dart';
 import 'package:foodiez/widgets/drwer.dart';
 import 'package:foodiez/widgets/home_body.dart';
+import 'package:foodiez/widgets/recipe_card.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MYHomePage extends StatefulWidget {
@@ -35,20 +36,6 @@ class _MYHomePageState extends State<MYHomePage> {
     return Scaffold(
       // ----- Buttom Bar --------
       backgroundColor: Colors.white,
-      bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          onTap: onTap,
-          currentIndex: currentIndex,
-          selectedItemColor: Colors.black45,
-          unselectedItemColor: Colors.grey.withOpacity(0.5),
-          showUnselectedLabels: false,
-          showSelectedLabels: false,
-          elevation: 0,
-          items: [
-            BottomNavigationBarItem(label: '', icon: Icon(Icons.home)),
-            BottomNavigationBarItem(label: '', icon: Icon(Icons.search)),
-            BottomNavigationBarItem(label: '', icon: Icon(Icons.person)),
-          ]),
 
       //----- Drawer -----
       // drawer: MyNavBar(),
@@ -62,8 +49,6 @@ class _MYHomePageState extends State<MYHomePage> {
       //   backgroundColor: Color.fromARGB(255, 218, 183, 44),
       // ),
       body: pages[currentIndex],
-
-      
     );
   }
 }

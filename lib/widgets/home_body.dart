@@ -92,7 +92,7 @@ class _HomeBodyState extends State<HomeBody> {
                       children: [
                         Text(recipe.title),
                         Image.network(
-                          recipe.image,
+                          recipe.Image,
                           width: 200,
                         )
                       ],
