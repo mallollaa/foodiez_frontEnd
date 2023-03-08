@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodiez/pages/auth/signin_page.dart';
 import 'package:foodiez/pages/auth/signup_page.dart';
 import 'package:foodiez/providers/auth_providers.dart';
+import 'package:foodiez/providers/recipes_providers.dart';
 
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +14,9 @@ void main() {
     providers: [
       ChangeNotifierProvider(
         create: (context) => AuthProvider(),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => RecipesProvider(),
       )
     ],
     child: MyApp(),
@@ -40,6 +44,7 @@ class MyApp extends StatelessWidget {
 }
 
 final _router = GoRouter(
+  initialLocation: '/',
   routes: [
     GoRoute(
       path: '/',

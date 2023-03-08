@@ -27,6 +27,7 @@ class _MyNavBarState extends State<MyNavBar> {
                   child: ClipOval(
                     child: Image.asset("assets/images/userpic.png"),
                   ),
+
                 ),
               ),
               ListTile(
@@ -62,5 +63,6 @@ class _MyNavBarState extends State<MyNavBar> {
             ),
       // Divider(),
     );
+
   }
 }

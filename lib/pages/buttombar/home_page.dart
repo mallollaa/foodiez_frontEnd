@@ -53,6 +53,7 @@ class _MYHomePageState extends State<MYHomePage> {
       //----- Drawer -----
       // drawer: MyNavBar(),
       // ---App Bar ----
+
       // appBar: AppBar(
       //   title: Text(
       //     "Foodiez",
@@ -61,6 +62,8 @@ class _MYHomePageState extends State<MYHomePage> {
       //   backgroundColor: Color.fromARGB(255, 218, 183, 44),
       // ),
       body: pages[currentIndex],
+
+      
     );
   }
 }
