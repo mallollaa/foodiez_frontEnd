@@ -69,17 +69,6 @@ class _HomeBodyState extends State<HomeBody> {
 
         // --- showing the body -----
         MyfoodBodyPage(),
-        Container(
-          padding: EdgeInsets.only(top: 25),
-          child: Text(
-            " Manal & Waleed Kitchen ! ",
-            style: GoogleFonts.alef(
-                fontWeight: FontWeight.w700,
-                fontSize: 24,
-                color: Color.fromARGB(255, 243, 91, 45)),
-            textAlign: TextAlign.center,
-          ),
-        ),
 
         SizedBox(
           height: 25,

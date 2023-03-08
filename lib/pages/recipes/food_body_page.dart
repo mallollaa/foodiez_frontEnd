@@ -90,8 +90,28 @@ class _MyfoodBodyPageState extends State<MyfoodBodyPage> {
               ),
             ),
             Container(
+              margin: EdgeInsets.only(left: 20),
               child: SingleChildScrollView(
-                  child: Column(children: [Container(child: Text("hello"))])),
+                  child: Column(
+                children: [
+                  Card(
+                    child: Row(
+                      children: [
+                        Image.asset(
+                          "assets/images/burger.jpg",
+                          width: 120,
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        Column(
+                          children: [Text("title:"), Text("description")],
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              )),
             )
           ],
         )
