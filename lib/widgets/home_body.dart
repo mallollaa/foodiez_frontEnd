@@ -4,6 +4,7 @@ import 'package:foodiez/pages/recipes/food_body_page.dart';
 import 'package:foodiez/widgets/text/text.dart';
 
 import 'package:foodiez/providers/recipes_providers.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -51,15 +52,20 @@ class _HomeBodyState extends State<HomeBody> {
               ),
               Center(
                 child: Container(
-                  width: 45,
-                  height: 45,
-                  child: Icon(
-                    Icons.add,
-                    color: Colors.white,
-                  ),
+                  width: 50,
+                  height: 50,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Color.fromARGB(255, 223, 244, 133),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black12,
+                            offset: Offset(0, 5),
+                            blurRadius: 10)
+                      ]),
+                  child: Icon(
+                    Icons.search,
+                    color: Colors.black54,
                   ),
                 ),
               )

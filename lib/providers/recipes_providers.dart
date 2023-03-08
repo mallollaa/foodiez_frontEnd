@@ -1,21 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:foodiez/models/catigories.dart';
 import 'package:foodiez/models/recipes.dart';
 import 'package:foodiez/services/client.dart';
 import 'package:foodiez/services/recipes_services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter/foundation.dart';
 
 class RecipesProvider extends ChangeNotifier {
   List<Recipes> recipes = [];
+  List<Category> categorys = [];
 
   // Actions
+  final recipeServices = RecipesService();
 
   Future<void> getRecipes() async {
-    final recipeServices = RecipesService();
     final recipeResponse = await recipeServices.getRecipes();
     recipes = recipeResponse;
   }
+
+  Future<void> getCategory() async {
+    final categoriesResponse = await recipeServices.getCategories();
+    categorys = categoriesResponse;
+  }
 }
+
 
 //   Future<void> createRecipe(Recipes recipe) async {
 //     try {

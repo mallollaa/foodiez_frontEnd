@@ -1,7 +1,10 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:foodiez/models/catigories.dart';
+import 'package:foodiez/providers/recipes_providers.dart';
 import 'package:foodiez/widgets/text/small_text.dart';
 import 'package:foodiez/widgets/text/text.dart';
+import 'package:provider/provider.dart';
 
 class MyfoodBodyPage extends StatefulWidget {
   const MyfoodBodyPage({super.key});
@@ -14,6 +17,7 @@ class _MyfoodBodyPageState extends State<MyfoodBodyPage> {
   PageController pageController = PageController(viewportFraction: 0.8);
   var _currentPageeValue = 0.0;
   double _scaleFactore = 0.8;
+  Category category = Category(title: '', image: '');
   @override
   void initState() {
     // this for the pic when we silde it left or right
@@ -33,6 +37,8 @@ class _MyfoodBodyPageState extends State<MyfoodBodyPage> {
   }
 
   Widget build(BuildContext context) {
+    final recipesProvider = Provider.of<RecipesProvider>(context);
+    final recipes = recipesProvider.recipes;
     return Column(
       children: [
         //----- slider section -----
@@ -43,7 +49,7 @@ class _MyfoodBodyPageState extends State<MyfoodBodyPage> {
             controller: pageController,
             itemCount: 5,
             itemBuilder: (context, position) {
-              return _buildPageItem(position);
+              return _buildPageItem(position, category);
             },
           ),
         ),
@@ -120,7 +126,7 @@ class _MyfoodBodyPageState extends State<MyfoodBodyPage> {
   }
 }
 
-Widget _buildPageItem(int index) {
+Widget _buildPageItem(int index, Category category) {
   return Stack(
     children:
         // we wrap it with stack becouse we want the container to take
@@ -136,7 +142,7 @@ Widget _buildPageItem(int index) {
           // Dont forget the image should come from the Backend
           image: DecorationImage(
             fit: BoxFit.cover, // to make the pic fit the container
-            image: AssetImage("assets/images/book2.jpg"),
+            image: NetworkImage(category.image),
           ),
         ),
       ),
@@ -166,7 +172,7 @@ Widget _buildPageItem(int index) {
               // pass categores here
               children: [
                 MyText(
-                  text: "Chinese",
+                  text: category.title,
                   size: 14,
                 ),
                 SizedBox(
@@ -188,7 +194,7 @@ Widget _buildPageItem(int index) {
                       width: 10,
                     ),
                     SmallText(
-                      text: "Cheif : Manal Alajmi",
+                      text: category.title,
                     )
                   ],
                 ),
