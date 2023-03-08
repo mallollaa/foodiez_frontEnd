@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodiez/pages/auth/signin_page.dart';
+import 'package:foodiez/pages/auth/Login.dart';
 import 'package:foodiez/pages/auth/signup_page.dart';
 import 'package:foodiez/providers/auth_providers.dart';
 import 'package:foodiez/providers/recipes_providers.dart';
@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
 }
 
 final _router = GoRouter(
-  initialLocation: '/',
+  initialLocation: '/signin',
   routes: [
     GoRoute(
       path: '/',
@@ -57,7 +57,7 @@ final _router = GoRouter(
     ),
     GoRoute(
       path: '/signin',
-      builder: (context, state) => SigninPage(),
+      builder: (context, state) => Login(),
     ),
     // GoRoute(
     //   path: '/',

@@ -5,6 +5,7 @@ import 'package:foodiez/pages/buttombar/account_page.dart';
 import 'package:foodiez/pages/buttombar/search_page.dart';
 import 'package:foodiez/widgets/drwer.dart';
 import 'package:foodiez/widgets/home_body.dart';
+import 'package:foodiez/widgets/recipe_card.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MYHomePage extends StatefulWidget {
@@ -33,34 +34,24 @@ class _MYHomePageState extends State<MYHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // ----- Buttom Bar --------
-      backgroundColor: Colors.white,
-      bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          onTap: onTap,
-          currentIndex: currentIndex,
-          selectedItemColor: Colors.black45,
-          unselectedItemColor: Colors.grey.withOpacity(0.5),
-          showUnselectedLabels: false,
-          showSelectedLabels: false,
-          elevation: 0,
-          items: [
-            BottomNavigationBarItem(label: '', icon: Icon(Icons.home)),
-            BottomNavigationBarItem(label: '', icon: Icon(Icons.search)),
-            BottomNavigationBarItem(label: '', icon: Icon(Icons.person)),
-          ]),
+        // ----- Buttom Bar --------
+        backgroundColor: Colors.white,
 
-      //----- Drawer -----
-      drawer: MyNavBar(),
-      // ---App Bar ----
-      appBar: AppBar(
-        title: Text(
-          "Foodiez",
-          style: GoogleFonts.aBeeZee(fontSize: 20),
+        //----- Drawer -----
+        // ---App Bar ----
+        appBar: AppBar(
+          title: Text(
+            "Foodiez",
+            style: GoogleFonts.aBeeZee(fontSize: 20),
+          ),
+          backgroundColor: Color.fromARGB(255, 218, 183, 44),
         ),
-        backgroundColor: Color.fromARGB(255, 218, 183, 44),
-      ),
-      body: HomeBody(),
-    );
+        body: RecipeCard(
+          title: '',
+          cookTime: '45 min',
+          rating: '9.5',
+          thumbnailUrl:
+              'https://lh3.googleusercontent.com/ei5eF1LRFkkcekhjdR_8XgOqgdjpomf-rda_vvh7jIauCgLlEWORINSKMRR6I6iTcxxZL9riJwFqKMvK0ixS0xwnRHGMY4I5Zw=s360',
+        ));
   }
 }
