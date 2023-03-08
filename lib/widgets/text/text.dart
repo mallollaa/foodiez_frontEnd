@@ -20,6 +20,7 @@ class MyText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
+      maxLines: 1,
       overflow: overflow,
       style: GoogleFonts.aBeeZee(
         fontWeight: FontWeight.w700,

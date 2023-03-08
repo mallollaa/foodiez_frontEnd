@@ -10,7 +10,7 @@ class SmallText extends StatelessWidget {
 
   SmallText({
     Key? key,
-    this.color = Colors.grey,
+    this.color = Colors.black26,
     required this.text,
     this.hight = 1.2,
     this.size = 12, // check this
@@ -20,8 +20,8 @@ class SmallText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.abel(
-        // fontWeight: FontWeight.w700,
+      style: GoogleFonts.actor(
+        fontWeight: FontWeight.w700,
         color: color,
         fontSize: size,
         height: hight,

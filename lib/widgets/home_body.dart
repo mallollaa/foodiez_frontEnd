@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:foodiez/pages/recipes/food_body_page.dart';
 
 import 'package:foodiez/widgets/search_bar.dart';
 import 'package:foodiez/widgets/text/text.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+
+import 'text/small_text.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({
@@ -19,9 +22,10 @@ class _HomeBodyState extends State<HomeBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        // --- shwing the header ----
         Container(
           child: Container(
-            margin: EdgeInsets.only(top: 7),
+            margin: EdgeInsets.only(top: 10, bottom: 10),
             padding: EdgeInsets.only(left: 20, right: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -29,13 +33,16 @@ class _HomeBodyState extends State<HomeBody> {
                 Column(
                   children: [
                     MyText(
-                      text: "Kuwait",
-                      // size: 12,
+                      text: "MW Kitchen",
                     ),
-                    MyText(
-                      text: "Andlous",
-                      color: Colors.black26,
-                      size: 12,
+                    Row(
+                      children: [
+                        SmallText(
+                          text: "Kuwait",
+                          color: Colors.black54,
+                        ),
+                        Icon(Icons.arrow_drop_down_rounded)
+                      ],
                     )
                   ],
                 ),
@@ -57,6 +64,8 @@ class _HomeBodyState extends State<HomeBody> {
             ),
           ),
         ),
+        // --- showing the body -----
+        MyfoodBodyPage(),
       ],
     );
   }
