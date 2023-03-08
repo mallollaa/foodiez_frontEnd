@@ -51,16 +51,19 @@ class _MYHomePageState extends State<MYHomePage> {
           ]),
 
       //----- Drawer -----
-      drawer: MyNavBar(),
+      // drawer: MyNavBar(),
       // ---App Bar ----
-      appBar: AppBar(
-        title: Text(
-          "Foodiez",
-          style: GoogleFonts.aBeeZee(fontSize: 20),
-        ),
-        backgroundColor: Color.fromARGB(255, 218, 183, 44),
-      ),
-      body: HomeBody(),
+
+      // appBar: AppBar(
+      //   title: Text(
+      //     "Foodiez",
+      //     style: GoogleFonts.aBeeZee(fontSize: 20),
+      //   ),
+      //   backgroundColor: Color.fromARGB(255, 218, 183, 44),
+      // ),
+      body: pages[currentIndex],
+
+      
     );
   }
 }
