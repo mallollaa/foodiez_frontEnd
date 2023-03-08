@@ -34,24 +34,21 @@ class _MYHomePageState extends State<MYHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // ----- Buttom Bar --------
-        backgroundColor: Colors.white,
+      // ----- Buttom Bar --------
+      backgroundColor: Colors.white,
 
-        //----- Drawer -----
-        // ---App Bar ----
-        appBar: AppBar(
-          title: Text(
-            "Foodiez",
-            style: GoogleFonts.aBeeZee(fontSize: 20),
-          ),
-          backgroundColor: Color.fromARGB(255, 218, 183, 44),
-        ),
-        body: RecipeCard(
-          title: '',
-          cookTime: '45 min',
-          rating: '9.5',
-          thumbnailUrl:
-              'https://lh3.googleusercontent.com/ei5eF1LRFkkcekhjdR_8XgOqgdjpomf-rda_vvh7jIauCgLlEWORINSKMRR6I6iTcxxZL9riJwFqKMvK0ixS0xwnRHGMY4I5Zw=s360',
-        ));
+      //----- Drawer -----
+      // drawer: MyNavBar(),
+      // ---App Bar ----
+
+      // appBar: AppBar(
+      //   title: Text(
+      //     "Foodiez",
+      //     style: GoogleFonts.aBeeZee(fontSize: 20),
+      //   ),
+      //   backgroundColor: Color.fromARGB(255, 218, 183, 44),
+      // ),
+      body: pages[currentIndex],
+    );
   }
 }

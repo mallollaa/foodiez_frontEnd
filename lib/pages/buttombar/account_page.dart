@@ -1,8 +1,18 @@
-import 'package:flutter/material.dart';
+import 'dart:html';
 
-class MyAccountPage extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:foodiez/widgets/account_profile.dart';
+
+class MyAccountPage extends StatefulWidget {
   const MyAccountPage({super.key});
 
+  @override
+  State<MyAccountPage> createState() => _MyAccountPageState();
+}
+
+class _MyAccountPageState extends State<MyAccountPage> {
+  final double coverHeight = 280;
+  final double profileHeight = 144;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
