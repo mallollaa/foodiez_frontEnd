@@ -3,6 +3,7 @@ import 'package:foodiez/pages/auth/signin_page.dart';
 import 'package:foodiez/pages/auth/signup_page.dart';
 import 'package:foodiez/providers/auth_providers.dart';
 import 'package:foodiez/providers/recipes_providers.dart';
+import 'package:foodiez/services/recipes_services.dart';
 
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';

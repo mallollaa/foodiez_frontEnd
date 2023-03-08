@@ -51,7 +51,7 @@ class HomeBody extends StatelessWidget {
                       children: [
                         Text(recipe.title),
                         Image.network(
-                          recipe.image,
+                          recipe.Image,
                           width: 200,
                         )
                       ],
