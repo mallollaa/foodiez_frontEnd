@@ -38,7 +38,7 @@ class Login extends StatelessWidget {
                 child: TextField(
                   decoration: InputDecoration(
                     icon: Icon(Icons.email),
-                    hintText: 'Email',
+                    hintText: 'username',
                     hintStyle: TextStyle(fontFamily: 'ro'),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),

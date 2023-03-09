@@ -24,10 +24,12 @@ class AuthProvider extends ChangeNotifier {
 
   // to make sure you are loged in
   bool get isAuth {
-    if (token.isNotEmpty && Jwt.getExpiryDate(token)!.isAfter(DateTime.now())) {
-      user = User.fromJson(Jwt.parseJwt(
-          token)); // to convert the josn into user model , and the jwt. pa.. decode the token
-      return true;
+    if (token.isNotEmpty) {
+      DateTime? expiryDate = Jwt.getExpiryDate(token);
+      if (expiryDate != null && expiryDate.isAfter(DateTime.now())) {
+        user = User.fromJson(Jwt.parseJwt(token));
+        return true;
+      }
     }
     return false;
   }

@@ -1,13 +1,20 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 import 'package:foodiez/models/catigories.dart';
 import 'package:foodiez/models/recipes.dart';
 import 'package:foodiez/services/client.dart';
 import 'package:foodiez/services/recipes_services.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class RecipesProvider extends ChangeNotifier {
   List<Recipes> recipes = [];
   List<Category> categorys = [];
+
+  RecipesProvider() {
+    getRecipes();
+    getCategory();
+  }
 
   // Actions
   final recipeServices = RecipesService();

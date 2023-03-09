@@ -10,16 +10,19 @@ Recipes _$RecipesFromJson(Map<String, dynamic> json) => Recipes(
       id: json['id'] as int?,
       title: json['title'] as String,
       description: json['description'] as String,
-      Image: json['Image'] as String,
+      image: json['image'] as String,
       category: json['category'] as String,
       chef: json['chef'] as String,
+      ingrediants:
+          (json['ingrediants'] as List<dynamic>).map((e) => e as int).toList(),
     );
 
 Map<String, dynamic> _$RecipesToJson(Recipes instance) => <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
       'description': instance.description,
-      'Image': instance.Image,
+      'image': instance.image,
       'category': instance.category,
       'chef': instance.chef,
+      'ingrediants': instance.ingrediants,
     };

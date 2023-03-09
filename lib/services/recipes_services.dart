@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:foodiez/models/catigories.dart';
 import 'package:foodiez/models/ingredients.dart';
@@ -17,7 +16,7 @@ class RecipesService {
 
   Future<Recipes> getRecipe(int id) async {
     try {
-      final Response response = await Client.client.get('recipes/$id/');
+      final Response response = await Client.client.get('/recipes/$id/');
       final Map<String, dynamic> data = response.data;
       final Recipes recipe = Recipes.fromJson(data);
       return recipe;
@@ -28,7 +27,10 @@ class RecipesService {
 
   Future<List<Category>> getCategories() async {
     try {
-      final Response response = await Client.client.get('categories/');
+      print(
+          "Request is to be made to ${Client.client.options.baseUrl}/categories");
+      final Response response = await Client.client.get('/categories');
+      print("Request is made to ${Client.client.options.baseUrl}/categories");
       final List<dynamic> data = response.data;
       final List<Category> categories =
           data.map((e) => Category.fromJson(e)).toList();
@@ -40,7 +42,7 @@ class RecipesService {
 
   Future<List<Ingredient>> getIngredients() async {
     try {
-      final Response response = await Client.client.get('ingredients/');
+      final Response response = await Client.client.get('/ingredients/');
       final List<dynamic> data = response.data;
       final List<Ingredient> ingredients =
           data.map((e) => Ingredient.fromJson(e)).toList();
@@ -53,7 +55,7 @@ class RecipesService {
   Future<Rating> createRating(Rating rating) async {
     try {
       final Response response =
-          await Client.client.post('ratings/', data: rating.toJson());
+          await Client.client.post('/ratings/', data: rating.toJson());
       final Map<String, dynamic> data = response.data;
       final Rating newRating = Rating.fromJson(data);
       return newRating;
@@ -65,7 +67,7 @@ class RecipesService {
   Future<Recipes> createRecipe(Recipes recipe) async {
     try {
       final Response response =
-          await Client.client.post('recipes/', data: recipe.toJson());
+          await Client.client.post('/recipes/', data: recipe.toJson());
       final Map<String, dynamic> data = response.data;
       final Recipes newRecipe = Recipes.fromJson(data);
       return newRecipe;
@@ -77,7 +79,7 @@ class RecipesService {
   Future<Recipes> updateRecipe(int id, Recipes recipe) async {
     try {
       final Response response =
-          await Client.client.put('recipes/$id/', data: recipe.toJson());
+          await Client.client.put('/recipes/$id/', data: recipe.toJson());
       final Map<String, dynamic> data = response.data;
       final Recipes updatedRecipe = Recipes.fromJson(data);
       return updatedRecipe;
@@ -88,7 +90,7 @@ class RecipesService {
 
   Future<void> deleteRecipe(int id) async {
     try {
-      await Client.client.delete('recipes/$id/');
+      await Client.client.delete('/recipes/$id/');
     } catch (e) {
       throw Exception('Failed to delete recipe: $e');
     }

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:foodiez/pages/buttombar/account_page.dart';
-import 'package:foodiez/pages/buttombar/home_page.dart';
+import 'package:foodiez/pages/home_page.dart';
 import 'package:foodiez/pages/buttombar/profile.dart';
 import 'package:foodiez/pages/buttombar/search_page.dart';
 import 'package:foodiez/widgets/colors.dart';
 
 class Navigation extends StatefulWidget {
-  const Navigation({super.key});
+  Navigation({super.key});
 
   @override
   State<Navigation> createState() => _NavigationState();
@@ -65,13 +65,13 @@ class _NavigationState extends State<Navigation> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    index = 0;
+                    index = 1;
                   });
                 },
                 child: Icon(
                   Icons.favorite,
                   size: 27,
-                  color: index == 3 ? maincolor : Colors.grey,
+                  color: index == 2 ? maincolor : Colors.grey,
                 ),
               ),
               GestureDetector(

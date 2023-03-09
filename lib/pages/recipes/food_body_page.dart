@@ -6,18 +6,18 @@ import 'package:foodiez/widgets/text/small_text.dart';
 import 'package:foodiez/widgets/text/text.dart';
 import 'package:provider/provider.dart';
 
-class MyfoodBodyPage extends StatefulWidget {
-  const MyfoodBodyPage({super.key});
+class MyFoodBodyPage extends StatefulWidget {
+  const MyFoodBodyPage({super.key});
 
   @override
-  State<MyfoodBodyPage> createState() => _MyfoodBodyPageState();
+  State<MyFoodBodyPage> createState() => _MyFoodBodyPageState();
 }
 
-class _MyfoodBodyPageState extends State<MyfoodBodyPage> {
+class _MyFoodBodyPageState extends State<MyFoodBodyPage> {
   PageController pageController = PageController(viewportFraction: 0.8);
   var _currentPageeValue = 0.0;
   double _scaleFactore = 0.8;
-  Category category = Category(title: '', image: '');
+
   @override
   void initState() {
     // this for the pic when we silde it left or right
@@ -38,7 +38,9 @@ class _MyfoodBodyPageState extends State<MyfoodBodyPage> {
 
   Widget build(BuildContext context) {
     final recipesProvider = Provider.of<RecipesProvider>(context);
-    final recipes = recipesProvider.recipes;
+    final categories = recipesProvider.categorys;
+    print("GOT SOME CATEGORIES");
+    print(categories);
     return Column(
       children: [
         //----- slider section -----
@@ -47,9 +49,9 @@ class _MyfoodBodyPageState extends State<MyfoodBodyPage> {
           height: 320,
           child: PageView.builder(
             controller: pageController,
-            itemCount: 5,
-            itemBuilder: (context, position) {
-              return _buildPageItem(position, category);
+            itemCount: categories.length,
+            itemBuilder: (context, index) {
+              return _buildPageItem(index, categories[index]);
             },
           ),
         ),

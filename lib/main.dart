@@ -8,7 +8,7 @@ import 'package:foodiez/services/recipes_services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-import 'pages/buttombar/home_page.dart';
+import 'pages/home_page.dart';
 
 void main() {
   runApp(MultiProvider(

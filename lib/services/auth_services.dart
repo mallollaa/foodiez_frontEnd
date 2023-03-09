@@ -16,7 +16,7 @@ class AuthServices {
     } on DioError catch (e) {
       print(e);
     }
-// we are acsseing the token inside the josion data in the backend
+    // we are acsseing the token inside the josion data in the backend
     return token;
   }
 
@@ -28,7 +28,6 @@ class AuthServices {
     } on DioError catch (e) {
       print(e);
     }
-// we are acsseing the token inside the josion data in the backend
     return token;
   }
 }

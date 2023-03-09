@@ -11,9 +11,10 @@ class Recipes {
   int? id;
   String title;
   String description;
-  String Image;
+  String image;
   String category;
   String chef;
+  List<int> ingrediants;
   // List<Ingredient> ingredients;
   // User chef;
   // List<Rating> ratings;
@@ -26,10 +27,10 @@ class Recipes {
     required this.id,
     required this.title,
     required this.description,
-    required this.Image,
+    required this.image,
     required this.category,
     required this.chef,
-    // required this.ingredients,
+    required this.ingrediants,
     // required this.chef,
     // required this.ratings,
   });
